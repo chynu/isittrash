@@ -16,10 +16,9 @@ class Trash(models.Model):
 	html = models.CharField()
 	category = models.CharField(max_length=1)
 
-	def throw(self, nm, dsc, img, html, cat):
-		name = nm
-		desc = dsc
-		img_src = img
-		html = html
-		category = cat
-
+	# def throw(self, nm, dsc, img, html, cat):
+	# 	name = nm
+	# 	desc = dsc
+	# 	img_src = img
+	# 	html = html
+	# 	category = cat
