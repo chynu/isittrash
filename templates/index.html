@@ -3,6 +3,7 @@
 <!-- asdf -->
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="../stylesheets/index.css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -32,10 +33,10 @@
 	
 </head>
 <body>
+	<div id="outer">
 	<div>
-	<h1><center>Is It Trash?</center></h1>
+	<h1 style="padding: 10px;"><center>Is It Trash?</center></h1>
 	</div>
-	
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
@@ -68,10 +69,7 @@
 						<a href="#tab1" rel="tab1">Home</a>
 					</li>
 					<li>
-						<a href="#tab2" rel="tab2">How to Recycle</a>
-					</li>
-					<li>
-						<a href="#tab3" rel="tab3">Suggestions</a>
+						<a href="#tab2" rel="tab2">Suggestions</a>
 					</li>
 				</ul>
 				</div>
@@ -99,53 +97,37 @@
 					</form>
 
 
-					
-						<label>Search: <input id = "search" type = "text"></label>
-						<table>
-							<tr>
-								<td>Textile</td>
-								<td><span class = "keywordtext">clothes, fabric, jeans </span></td>
-								<td><input type = "button" name = "userId" value = "Is It Trash?"/></td>
-							</tr>
-							<tr>
-								<td>Plastic</td>
-								<td><span class = "keywordtext">water bottles, wrappers, container</span></td>
-								<td><input type = "button" name = "userId" value = "Is It Trash?"/></td>
-							</tr>
-							<tr>
-								<td>Glass</td>
-								<td><span class = "keywordtext">jar, glass bottle, cup</span></td>
-								<td><input type = "button" name = "userId" value = "Is It Trash?"/></td>
-							</tr>
-							<tr>
-								<td>Electronics</td>
-								<td><span class = "keywordtext">cell phones, laptops, tablets, batteries, battery</span></td>
-								<td><input type = "button" name = "userId" value = "Is It Trash?"/></td>
-							</tr>
-							<tr>
-								<td>Paper</td>
-								<td><span class = "keywordtext">cardboard, notebook paper, poster</span></td>
-								<td><input type = "button" name = "userId" value = "Is It Trash?"/></td>
-							</tr>
-							<tr>
-								<td>Compost</td>
-								<td><span class = "keywordtext">food, banana peels, apple cores</span></td>
-								<td><input type = "button" name = "userId" value = "Is It Trash?"/></td>
-							</tr>
-							<tr>
-								<td>Metal</td>
-								<td><span class = "keywordtext">aluminum, nails, screws</span></td>
-								<td><input type = "button" name = "userId" value = "Is It Trash?"/></td>
-							</tr>
-						</table>
-					
-
+					<div class="row">
+						<div class="col-md-12">
+						<label style="width:70%; display: block; margin-left: auto; margin-right: auto; margin-top: 20px;">
+						<input id = "search" type = "text" style="width:100%;" placeholder="Search..."></label>
+						<div id="content-wrapper">
+							<div class="content-box content-left">
+							<img src="img/fruit.jpg" class="crop">
+								<h1 class="center">Fruit<h1>
+								<span class = "keywordtext">apple, tomato, peach</span>
+							</div>
+							<div class="content-box">
+							<img src="img/batteries.jpg" class="crop">
+								<h1 class="center">Batteries</h1>
+								<span class = "keywordtext">lithium, volt</span>
+							</div>
+							<div class="content-box content-right">
+							<img src="img/glass.jpg" class="crop">
+								<h1 class="center">Glass</h1>
+								<span class = "keywordtext">jar, glass bottle, window</span>
+							</div>
+							<div class="content-box content-left">
+							<img src="img/glass.jpg" class="crop">
+								<h1 class="center">Glass</h1>
+								<span class = "keywordtext">jar, glass bottle, window</span>
+							</div>
+						</div>
+						</div>
+					</div>
 
 				</div>
 				<div id="tab2" class="mtab_content">
-				test
-				</div>
-				<div id="tab3" class="mtab_content">
 				<form class="form-horizontal">
 				<fieldset>
 
@@ -190,6 +172,7 @@
 				</div>
 			</div>
 		</div>
+		</div>
 	</div>
 	
 	<script>
@@ -226,38 +209,4 @@
 });
 	</script>
 </body>
-<style>
-#location{
-	position: absolute;
-	right: 100px;
-}
-
-#main-dropdown{
-	width: 200px;
-	display: block;
-	margin-top: 10px;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-#mtabs {
-    padding: 5px 0 4px 0;
-    margin: 0 0 0 0px;
-    /* font: 0.75em arial; */
-}
-
-
-.mtab_content {
-    display: none;
-}
-
-.keywordtext{
-	display: none;
-	visibility: hidden;
-}
-
-ul{
-	list-style-type: none;
-}
-</style>
 </html>

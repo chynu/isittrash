@@ -1,1 +1,96 @@
 /* css */
+#location{
+	position: absolute;
+	right: 100px;
+}
+
+#main-dropdown{
+	width: 200px;
+	display: block;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#mtabs {
+    padding: 5px 0 4px 0;
+    margin: 0 0 0 0px;
+    /* font: 0.75em arial; */
+}
+
+
+.mtab_content {
+    display: none;
+}
+
+.keywordtext{
+	display: none;
+	visibility: hidden;
+}
+
+ul{
+	list-style-type: none;
+}
+
+body{
+	background-image: url('../templates/img/forest_bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+#content-wrapper{
+	width: 80%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.content-box {
+	width: 27%;
+	height: 350px;
+	background-color: #bdf67e;
+	margin-right: 5%;
+	margin-top: 3%;
+	float: left;
+	overflow: auto;
+	
+}
+
+.content-right{
+	margin-right:0;	
+}
+.content-left{
+	margin-left: 5%;
+	float: left;
+	clear: left;
+}
+
+.center{
+	text-align: center;
+}
+
+.crop{
+	width: 80%;
+	height: 70%;
+	object-fit: cover;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	margin-top: 30px;
+}
+
+#outer{
+	width: 90%;
+	height: 90%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(256,256,256,.9);
+	
+}
+
+a:link, a:visited, a:hover, a:active{
+	color: #000;
+}
