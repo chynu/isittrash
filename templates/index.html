@@ -10,11 +10,30 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script>
 		 $(function(){ $("#template").load("template.html") });
+
+		 //Enables dynamic search :)
+		 $(function() {
+	        var $cells = $("td");
+
+	        $("#search").keyup(function() {
+	        	var val = $.trim(this.value).toUpperCase();
+	        	if (val == "")
+	        		$cells.parent().show();
+	        	else {
+	        		$cells.parent().hide();
+	        		$cells.filter(function() {
+	        			return -1 != $(this).text().toUpperCase().indexOf(val);
+	        		}).parent().show();
+	        	}
+	        });
+ 		});
+
 	</script>
+	
 </head>
 <body>
 	<div>
-	<h1><center>Is it trash?</center></h1>
+	<h1><center>Is It Trash?</center></h1>
 	</div>
 	
 	<div class="container-fluid">
@@ -78,6 +97,50 @@
 									</ul>
 						</div>
 					</form>
+
+
+					
+						<label>Search: <input id = "search" type = "text"></label>
+						<table>
+							<tr>
+								<td>Textile</td>
+								<td>clothes, fabric, jeans </td class = "search-keywords">
+								<td><input type = "checkbox" name = "userId" value = "@user.UserId"/></td>
+							</tr>
+							<tr>
+								<td>Plastic</td>
+								<td>water bottles, wrappers, container</td class = "search-keywords">
+								<td><input type = "checkbox" name = "userId" value = "@user.UserId"/></td>
+							</tr>
+							<tr>
+								<td>Glass</td>
+								<td>jar, glass bottle, cup</td class = "search-keywords">
+								<td><input type = "checkbox" name = "userId" value = "@user.UserId"/></td>
+							</tr>
+							<tr>
+								<td>Electronics</td>
+								<td>cell phones, laptops, tablets, batteries, battery</td class = "keywords">
+								<td><input type = "checkbox" name = "userId" value = "@user.UserId"/></td>
+							</tr>
+							<tr>
+								<td>Paper</td>
+								<td>cardboard, notebook paper, poster</td class = "search-keywords">
+								<td><input type = "checkbox" name = "userId" value = "@user.UserId"/></td>
+							</tr>
+							<tr>
+								<td>Compost</td>
+								<td>food, banana peels, apple cores</td class = "search-keywords">
+								<td><input type = "checkbox" name = "userId" value = "@user.UserId"/></td>
+							</tr>
+							<tr>
+								<td>Metal</td>
+								<td>aluminum, nails, screws</td class = "search-keywords">
+								<td><input type = "checkbox" name = "userId" value = "@user.UserId"/></td>
+							</tr>
+						</table>
+					
+
+
 				</div>
 				<div id="tab2" class="mtab_content">
 				test
@@ -155,6 +218,8 @@
         //  Show the selected tab content
         $(selected_tab).fadeIn();
  
+
+
         //  At the end, we add return false so that the click on the link is not executed
         return false;
 		});
@@ -185,6 +250,8 @@
 .mtab_content {
     display: none;
 }
+
+
 
 ul{
 	list-style-type: none;
