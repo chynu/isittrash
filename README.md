@@ -1,1 +1,3 @@
 # isittrash
+
+we r cool
