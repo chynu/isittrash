@@ -23,6 +23,9 @@ class IndexHandler(webapp2.RequestHandler):
             "dash_text": dash_text
         }
         self.response.write(template.render(temp))
+# ================== OBJECTS ====================
+""" OBJECT INFORMATION
+"""
 
 # ============== LINKS ===============
 app = webapp2.WSGIApplication([
