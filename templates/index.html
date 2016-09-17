@@ -75,32 +75,18 @@
 				</div>
 
 				<div id="tab1" class="mtab_content" style="display: block;">
-					<form action="index.php" method="POST" id="my_form">
-							<input type="hidden" name="category" id="category">
-						<div class="btn-group" id="main-dropdown">
-									 
-									<button class="btn btn-default">
-										Category of Trash
-									</button> 
-									<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-										<span class="caret"></span>
-									</button>
-									<ul class="dropdown-menu">
-										<li><a href="#">Electronics</a></li>
-										<li><a href="#">Food</a></li>
-										<li><a href="#">Glass</a></li>
-										<li><a href="#">Paper</a></li>
-										<li><a href="#">Plastics</a></li>
-										<li><a href="#">Textiles</a></li>
-									</ul>
-						</div>
-					</form>
-
-
 					<div class="row">
 						<div class="col-md-12">
 						<label style="width:70%; display: block; margin-left: auto; margin-right: auto; margin-top: 20px;">
 						<input id = "search" type = "text" style="width:100%;" placeholder="Search..."></label>
+						<div style="width: 30%; display: block; margin-left: auto; margin-right: auto;">
+							<input type="checkbox" name="category" value="Electronics">Electronics  
+							<input type="checkbox" name="category" value="Food">Food  
+							<input type="checkbox" name="category" value="Glass">Glass   
+							<input type="checkbox" name="category" value="Paper">Paper  
+							<input type="checkbox" name="category" value="Plastics">Plastics  
+							<input type="checkbox" name="category" value="Textiles">Textiles
+						</div>
 						<div id="content-wrapper">
 							<div class="content-box content-left">
 							<img src="img/fruit.jpg" class="crop">
