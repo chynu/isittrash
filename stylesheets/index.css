@@ -50,11 +50,11 @@ body{
 .content-box {
 	width: 27%;
 	height: 350px;
+	overflow: hidden;
 	background-color: #bdf67e;
 	margin-right: 5%;
 	margin-top: 3%;
 	float: left;
-	overflow: auto;
 	
 }
 
