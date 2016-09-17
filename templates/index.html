@@ -16,29 +16,138 @@
 	<div>
 	<h1><center>Is it trash?</center></h1>
 	</div>
-	<div id="template"></div>
+	
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="btn-group" id="main-dropdown">
-							 
-							<button class="btn btn-default">
-								Category of Trash
-							</button> 
-							<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu">
-								<li><a href="#">Electronics</a></li>
-								<li><a href="#">Food</a></li>
-								<li><a href="#">Glass</a></li>
-								<li><a href="#">Paper</a></li>
-								<li><a href="#">Plastics</a></li>
-								<li><a href="#">Textiles</a></li>
-							</ul>
+				<div class="btn-group" id="location">
+					 
+					<button class="btn btn-default">
+						State
+					</button> 
+					<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">Action</a>
+						</li>
+						<li>
+							<a href="#">Another action</a>
+						</li>
+						<li>
+						</li>
+						<li>
+							<a href="#">Something else here</a>
+						</li>
+					</ul>
+				</div>
+
+				<div id="mtabs">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#tab1" rel="tab1">Home</a>
+					</li>
+					<li>
+						<a href="#tab2" rel="tab2">How to Recycle</a>
+					</li>
+					<li>
+						<a href="#tab3" rel="tab3">Suggestions</a>
+					</li>
+				</ul>
+				</div>
+
+				<div id="tab1" class="mtab_content" style="display: block;">
+					<form action="index.php" method="POST" id="my_form">
+							<input type="hidden" name="category" id="category">
+						<div class="btn-group" id="main-dropdown">
+									 
+									<button class="btn btn-default">
+										Category of Trash
+									</button> 
+									<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+										<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Electronics</a></li>
+										<li><a href="#">Food</a></li>
+										<li><a href="#">Glass</a></li>
+										<li><a href="#">Paper</a></li>
+										<li><a href="#">Plastics</a></li>
+										<li><a href="#">Textiles</a></li>
+									</ul>
+						</div>
+					</form>
+				</div>
+				<div id="tab2" class="mtab_content">
+				test
+				</div>
+				<div id="tab3" class="mtab_content">
+				testtest
 				</div>
 			</div>
 		</div>
 	</div>
+	
+	<script>
+	$(document).ready(function(){ 
+            $('#main-dropdown li').click(function()
+                {
+                    $('#my_category').val($(this).html());
+                    $('#my_form').submit();
+                });
+				   
+			
+		//  When user clicks on tab, this code will be executed
+		$("#mtabs li").click(function() {
+        //  First remove class "active" from currently active tab
+        $("#mtabs li").removeClass('active');
+ 
+        //  Now add class "active" to the selected/clicked tab
+       $(this).addClass("active");
+ 
+        //  Hide all tab content
+        $(".mtab_content").hide();
+ 
+        //  Here we get the href value of the selected tab
+        var selected_tab = $(this).find("a").attr("href");
+ 
+        //  Show the selected tab content
+        $(selected_tab).fadeIn();
+ 
+        //  At the end, we add return false so that the click on the link is not executed
+        return false;
+		});
+});
+	</script>
 </body>
+<style>
+#location{
+	position: absolute;
+	right: 100px;
+}
+
+#main-dropdown{
+	width: 200px;
+	display: block;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#mtabs {
+    padding: 5px 0 4px 0;
+    margin: 0 0 0 0px;
+    /* font: 0.75em arial; */
+}
+
+
+.mtab_content {
+    display: none;
+}
+
+ul{
+	list-style-type: none;
+}
+</style>
 </html>
