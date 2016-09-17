@@ -29,9 +29,21 @@
 	        });
  		});
 
+		 
+
+
+		 function createpopup(contentid) {
+		 	var newpage = window.open();
+		 	var content = $(contentid).html();
+		 	$(newpage.document.body).html(content);
+		 }
+
 	</script>
 	
 </head>
+
+
+
 <body>
 	<div id="outer">
 	<div>
@@ -88,7 +100,7 @@
 							<input type="checkbox" name="category" value="Textiles">Textiles
 						</div>
 						<div id="content-wrapper">
-							<div class="content-box content-left">
+							<div class="content-box content-left" onclick = "createpopup('#fruithtml');">
 							<img src="img/fruit.jpg" class="crop">
 								<h1 class="center">Fruit</h1>
 								<h1><span class = "keywordtext">apple, tomato, peach</span></h1>
@@ -194,5 +206,18 @@
 		});
 });
 	</script>
+
+
+
+
+	<div id= 'fruithtml'>
+		<h1>Fruit</h1>
+	 	<p>Compost</p>
+	</div>
+
+
+
+
+
 </body>
 </html>
