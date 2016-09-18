@@ -2,6 +2,8 @@
 <html>
 <!-- asdf -->
 <head>
+	<title>is it trash?</title>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="../stylesheets/index.css">
 	<!-- Latest compiled and minified CSS -->
@@ -10,13 +12,15 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script>
+
+		$("html,body").hide().fadeIn(1500);
 		 $(function(){ $("#template").load("template.html") });
 
 		 //Enables dynamic search :)
 		 $(function() {
-	        var $cells = $("h1");
+	        var $cells = $("h2");
 
-	        $("#search").keyup(function() {
+	        $("#search input").keyup(function() {
 	        	var val = $.trim(this.value).toUpperCase();
 	        	if (val == "")
 	        		$cells.parent().show();
@@ -29,8 +33,6 @@
 	        });
  		});
 
-		 
-
 
 		 function createpopup(contentid) {
 		 	var newpage = window.open();
@@ -41,41 +43,31 @@
 	</script>
 	
 </head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+	<div class="btn-group" id="location">				 
+		<button class="btn btn-default">Your location</button> 
+		<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li><a href="#">New Jersey</a></li>
+			<li><a href="#">New York</a></li>
+			<li><a href="#">Maine</a></li>
+		</ul>
+	</div>
 
 
-
-<body>
 	<div id="outer">
-	<div>
-	<h1 style="padding: 20px;"><center>Is It Trash?</center></h1>
+	<div id="head"> <span id="title">is it trash?</span><br/>
+	<p>We get it. You have crap to throw away, and you don't want to be bothered. But the world is at stake. It is suffering because of our laziness.
+	Why not take the time to figure out just <em>how</em> to throw this crap away? What happens to batteries? What about bottle caps? Here's your favorite resource to learn about trash.</p>
 	</div>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="btn-group" id="location">
-					 
-					<button class="btn btn-default">
-						State
-					</button> 
-					<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu">
-						<li>
-							<a href="#">Action</a>
-						</li>
-						<li>
-							<a href="#">Another action</a>
-						</li>
-						<li>
-						</li>
-						<li>
-							<a href="#">Something else here</a>
-						</li>
-					</ul>
-				</div>
 
-				<div id="mtabs">
+				<!--div id="mtabs">
 				<ul class="nav nav-tabs">
 					<li class="active">
 						<a href="#tab1" rel="tab1">Home</a>
@@ -84,44 +76,57 @@
 						<a href="#tab2" rel="tab2">Suggestions</a>
 					</li>
 				</ul>
-				</div>
+				</div-->
 
 				<div id="tab1" class="mtab_content" style="display: block;">
 					<div class="row">
 						<div class="col-md-12">
-						<label style="width:70%; display: block; margin-left: auto; margin-right: auto; margin-top: 20px;">
-						<input id = "search" type = "text" style="width:100%;" placeholder="Search..."></label>
-						<div style="width: 30%; display: block; margin-left: auto; margin-right: auto;">
-							<input type="checkbox" name="category" value="Electronics">Electronics  
+						<div id="search">
+							<label style="width:70%; display: block; margin-left: auto; margin-right: auto; margin-top: 20px;">
+							<input type="text" style="width:100%;" placeholder="what do you want to throw away?"></label>
+						</div>
+
+						
+						<div style="width:30%; display: block; margin-left: auto; margin-right: auto;">
+							<input type="checkbox" name="category" value="Electronics">Electronics
 							<input type="checkbox" name="category" value="Food">Food  
 							<input type="checkbox" name="category" value="Glass">Glass   
 							<input type="checkbox" name="category" value="Paper">Paper  
 							<input type="checkbox" name="category" value="Plastics">Plastics  
 							<input type="checkbox" name="category" value="Textiles">Textiles
 						</div>
+
+						<!--Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/>
+						<Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/>
+						<Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/>
+						<Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/><Br/-->
+
+						<div id="section1">
 						<div id="content-wrapper">
-							<div class="content-box content-left" onclick = "createpopup('#fruithtml');">
+							<div class="trash content-left" onclick = "createpopup('#fruithtml');">
 							<img src="img/fruit.jpg" class="crop">
-								<h1 class="center">Fruit</h1>
-								<h1><span class = "keywordtext">apple, tomato, peach</span></h1>
+								<h2>Fruit</h2>
+								<h2><span class = "keywordtext">apple, tomato, peach</span></h2>
 							</div>
-							<div class="content-box">
+							<div class="trash">
 							<img src="img/batteries.jpg" class="crop">
-								<h1 class="center">Batteries</h1>
-								<h1><span class = "keywordtext">lithium, volt</span></h1>
+								<h2>Batteries</h2>
+								<h2><span class = "keywordtext">lithium, volt</span></h2>
 							</div>
-							<div class="content-box content-right">
+							<div class="trash content-right">
 							<img src="img/glass.jpg" class="crop">
-								<h1 class="center">Glass Jar</h1>
-								<h1><span class = "keywordtext">jar, glass bottle, window</span></h1>
+								<h2>Glass Jar</h2>
+								<h2><span class = "keywordtext">jar, glass bottle, window</span></h2>
 							</div>
-							<div class="content-box content-left">
+							<div class="trash content-left">
 							<img src="img/glass.jpg" class="crop">
-								<h1 class="center">Glass</h1>
-								<h1><span class = "keywordtext">jar, glass bottle, window</span></h1>
+								<h2>Glass</h2>
+								<h2><span class = "keywordtext">jar, glass bottle, window</span></h2>
 							</div>
+
 						</div>
 						</div>
+
 					</div>
 
 				</div>
@@ -129,40 +134,40 @@
 				<form class="form-horizontal">
 				<fieldset>
 
-				<!-- Form Name -->
-				<center><legend><br>Submit a Suggestion<br><br></legend></center>
+					<!-- Form Name -->
+					<center><legend><br>Submit a Suggestion<br><br></legend></center>
 
-				<!-- Text input-->
-				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Name</label>  
-				  <div class="col-md-4">
-				  <input id="submitName" name="submitName" type="text" class="form-control input-md">
-				  </div>
-				</div>
+					<!-- Text input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="textinput">Name</label>  
+					  <div class="col-md-4">
+					  <input id="submitName" name="submitName" type="text" class="form-control input-md">
+					  </div>
+					</div>
 
-				<!-- Text input-->
-				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Email</label>  
-				  <div class="col-md-4">
-				  <input id="submitEmail" name="submitEmail" type="email" class="form-control input-md">
-				  </div>
-				</div>
+					<!-- Text input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="textinput">Email</label>  
+					  <div class="col-md-4">
+					  <input id="submitEmail" name="submitEmail" type="email" class="form-control input-md">
+					  </div>
+					</div>
 
-				<!-- Textarea -->
-				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textarea">Description</label>
-				  <div class="col-md-4">                     
-					<textarea class="form-control" id="submitDescription" name="submitDescription">Please include category, State, and how to dispose.</textarea>
-				  </div>
-				</div>
+					<!-- Textarea -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="textarea">Description</label>
+					  <div class="col-md-4">                     
+						<textarea class="form-control" id="submitDescription" name="submitDescription">Please include category, State, and how to dispose.</textarea>
+					  </div>
+					</div>
 
-				<!-- Button -->
-				<div class="form-group">
-				  <label class="col-md-4 control-label" for="submit"></label>
-				  <div class="col-md-4">
-					<input type="submit" value="Submit!" class="form-control">
-				  </div>
-				</div>
+					<!-- Button -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="submit"></label>
+					  <div class="col-md-4">
+						<input type="submit" value="Submit!" class="form-control">
+					  </div>
+					</div>
 
 				</fieldset>
 				</form>
@@ -175,6 +180,7 @@
 	
 	<script>
 	$(document).ready(function(){ 
+
             $('#main-dropdown li').click(function()
                 {
                     $('#my_category').val($(this).html());
@@ -207,17 +213,22 @@
 });
 	</script>
 
-
-
-
 	<div id= 'fruithtml'>
 		<h1>Fruit</h1>
 	 	<p>Compost</p>
 	</div>
 
 
-
-
-
+	<script>
+	$("#search").click(function() {
+		$("html, body").animate({
+			scrollTop: $("#search").offset().top - 40
+		}, 800);
+		$("#content-wrapper").css({
+			"margin-top": "50px",
+			"transition": "opacity 3s ease-in-out"
+		});
+	});
+	</script>
 </body>
 </html>
